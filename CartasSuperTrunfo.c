@@ -10,7 +10,7 @@ struct Carta {
     int pontosturisticos;
 };
 
-int main(void) {
+int main() {
     struct Carta carta1, carta2;
 
     // Cadastro da Carta 1
@@ -85,6 +85,14 @@ int main(void) {
     printf("PIB: %.2f bilhão\n", carta1.pib);
     printf("Pontos Turísticos: %d\n", carta1.pontosturisticos);
 
+    // Cálculo da densidade populacional
+    float densidade = carta1.populacao / carta1.area;
+    printf("Densidade populacional: %.2f habitantes/km²\n", densidade);
+
+    // Cálculo do PIB per capita
+    float pibPerCapita = carta1.pib * 1e9 / carta1.populacao; // Multiplicando por 1 bilhão para converter PIB para unidades corretas
+    printf("PIB per capita: R$ %.2f\n", pibPerCapita);
+
     printf("\n===== Dados da Carta 2 =====\n");
     printf("Estado: %c\n", carta2.estado);
     printf("Código: %s\n", carta2.codigo);
@@ -93,6 +101,14 @@ int main(void) {
     printf("Área: %.2f km²\n", carta2.area);
     printf("PIB: %.2f bilhão\n", carta2.pib);
     printf("Pontos Turísticos: %d\n", carta2.pontosturisticos);
+
+    // Cálculo da densidade populacional
+    float densidade = carta2.populacao / carta1.area;
+    printf("Densidade populacional: %.2f habitantes/km²\n", densidade);
+
+    // Cálculo do PIB per capita
+    float pibPerCapita = carta2.pib * 1e9 / carta1.populacao; // Multiplicando por 1 bilhão para converter PIB para unidades corretas
+    printf("PIB per capita: R$ %.2f\n", pibPerCapita);
 
     return 0;
 }
